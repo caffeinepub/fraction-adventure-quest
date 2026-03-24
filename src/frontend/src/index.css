@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    --background: 0.97 0.02 240;
+    --foreground: 0.18 0.04 265;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 265;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 265;
+    --primary: 0.62 0.22 250;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.75 0.18 160;
+    --secondary-foreground: 1 0 0;
+    --muted: 0.94 0.02 240;
+    --muted-foreground: 0.5 0.05 265;
+    --accent: 0.72 0.2 55;
+    --accent-foreground: 0.18 0.04 265;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.9 0.03 240;
+    --input: 0.9 0.03 240;
+    --ring: 0.62 0.22 250;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+
+    /* Game-specific tokens */
+    --game-sky-from: #53c6ff;
+    --game-sky-to: #79f0d6;
+    --game-grass: #39c96b;
+    --game-teal: #11c7b8;
+    --game-orange: #ff9a2f;
+    --game-orange-light: #ffcc4d;
+    --game-purple: #7a4cff;
+    --game-purple-light: #b06bff;
+    --game-blue: #2e7bff;
+    --game-navy: #1b2352;
+    --game-green: #2ecc71;
+    --game-green-dark: #27ae60;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-8px);
+  }
+  40%,
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes star-pop {
+  0% {
+    transform: scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.3) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+  66% {
+    transform: translateY(-6px) rotate(-2deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 154, 47, 0.4), 0 6px 24px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 154, 47, 0.7), 0 6px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.4s ease-out forwards;
+}
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out forwards;
+}
+.animate-star-pop {
+  animation: star-pop 0.5s ease-out forwards;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.game-font {
+  font-family: "Nunito", sans-serif;
+}
+.display-font {
+  font-family: "Fredoka One", cursive;
+}
+
+.fraction-display {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.fraction-display .fraction-num {
+  border-bottom: 3px solid currentColor;
+  padding-bottom: 2px;
+  font-weight: 800;
+}
+
+.fraction-display .fraction-den {
+  padding-top: 2px;
+  font-weight: 800;
+}
+
+.cartoon-border {
+  border: 3px solid #1b2352;
+  box-shadow: 4px 4px 0px #1b2352;
+}
+
+.cartoon-border-lg {
+  border: 4px solid #1b2352;
+  box-shadow: 6px 6px 0px #1b2352;
+}
